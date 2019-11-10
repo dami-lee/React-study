@@ -24,11 +24,49 @@ class SignIn extends React.Component {
         })
     }
 
+    submit = () => {
+        const { email, password } = this.state;
+
+        const payload = {
+            email: email,
+            password: password
+        }
+
+        const url = 'http://stagings.ringleplus.com/api/v3/common/authenticate/simple_signin';
+        const opts = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        }
+
+        fetch(
+            url, opts
+        )
+        .then(res => res.json())
+        .then(
+            (result) => {
+                console.log(result);
+                if(result.id) {
+                    alert('성공');
+                } else {
+                    alert(result.message);
+                }
+            },
+            (error) => {
+                console.log(error);
+            }
+        )
+    }
+
     render() {
         const { email, password } = this.state;
         const {
             updateEmail,
-            updatePassword
+            updatePassword,
+            submit
         } = this;
 
         return (
@@ -43,7 +81,8 @@ class SignIn extends React.Component {
                     name="Password"
                     value={password}
                     onChange={updatePassword}/>
-                <Button>
+                <Button
+                    onClick={submit}>
                     Submit
                 </Button>
             </>
