@@ -48,15 +48,12 @@ class SignIn extends React.Component {
         .then(res => res.json())
         .then(
             (result) => {
-                console.log(result);
-                if(result.id) {
+                if(result.success) {
                     alert('성공');
                 } else {
-                    alert(result.message);
+                    alert('실패');
                 }
-            },
-            (error) => {
-                console.log(error);
+                console.log(result);
             }
         )
     }
