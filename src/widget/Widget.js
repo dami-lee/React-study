@@ -1,5 +1,6 @@
 import React from 'react';
 import Timer from './Timer';
+import Input from './common/Input';
 
 class Widget extends React.Component {
     constructor(props) {
@@ -36,14 +37,14 @@ class Widget extends React.Component {
             <>
             {
                 show === 'intro' ?
-                <div>
+                <Input
+                    type="text"
+                    name="name"
+                    value={name}
+                    onChange={updateName}
+                    onKeyDown={enterName}>
                     Hello, what your name?
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={updateName}
-                        onKeyDown={enterName}/>
-                </div> :
+                </Input> :
                 <div>
                     <Timer
                         name={name}/>
