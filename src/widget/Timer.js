@@ -9,6 +9,18 @@ class Timer extends React.Component {
             time: moment().format()
         }
     }
+
+    componentDidMount() {
+        this.timeId = setInterval(
+            () => this.setState({ time: moment().format() }), 1000
+        )
+    }
+
+    componentWillUnmount() {
+        console.log('이제 끌거임');
+        clearInterval(this.timeId);
+    }
+
     render() {
         const { time } = this.state;
 
