@@ -1,6 +1,7 @@
 import React from 'react';
 import Timer from './Timer';
 import Input from './common/Input';
+import Todo from './common/Todo';
 
 class Widget extends React.Component {
     constructor(props) {
@@ -42,13 +43,21 @@ class Widget extends React.Component {
         }
     }
 
+    deleteTodo = () => {
+        this.setState({
+            todoShow: false,
+            todo: ''
+        })
+    }
+
     render() {
         const { show, name, todoShow, todo } = this.state;
         const {
             updateName,
             enterName,
             updateTodo,
-            enterTodo
+            enterTodo,
+            deleteTodo
         } = this;
 
         return (
@@ -74,11 +83,11 @@ class Widget extends React.Component {
                             onKeyDown={enterTodo}>
                             What is your main focus for today?
                         </Input> :
-                        <div>
-                            <input type="checkbox"/>
-                            <label>{todo}</label>
-                            <button>[delete]</button>
-                        </div>
+                        <Todo
+                            name="todoItem"
+                            title={todo}>
+                            <button onClick={deleteTodo}>[delete]</button>
+                        </Todo>
                     }
                 </div>
             }
