@@ -1,10 +1,10 @@
 import React from 'react';
-import Sign from './sign/Sign';
+import Widget from './widget/Widget';
 
 function App() {
   return (
     <div className="App">
-      <Sign/>
+      <Widget/>
     </div>
   );
 }
