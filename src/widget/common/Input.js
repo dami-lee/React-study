@@ -2,7 +2,7 @@ import React from 'react';
 
 const Input = ({ type="text", name, children, ...props }) => {
     return (
-        <div>
+        <div class="input-container">
             <label
                 htmlFor={name}>
                 {children}

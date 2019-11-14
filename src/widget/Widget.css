@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.end {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.input-container input {
+    display: block;
+    height: 45px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    color: inherit;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: inherit;
+    outline: none;
+}
+
+.widget {
+    width: 100vw;
+    height: 100vh;
+    background: #333;
+    color: #fff;
+}
+
+.widget .time-container {
+    margin-bottom: 100px;
+}
+
+.widget .time-container .time {
+    margin: 0;
+    font-size: 100px;
+}
+
+.widget .time-container h2 {
+    margin: 0;
+}
+
+.widget .todo-container {
+    height: 100px;
+}
+
+.widget .todo-container .todo-item {
+    text-align: left;
+}
+
+.widget .todo-container .todo-item label {
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+.widget .todo-container .todo-item button {
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    opacity: .6;
+}
+
+.widget .todo-container .todo-item button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

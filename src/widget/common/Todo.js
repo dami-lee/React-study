@@ -2,7 +2,7 @@ import React from 'react';
 
 const Todo = props => {
     return (
-        <div>
+        <div class="todo-item center">
             <input
                 type="checkbox"
                 id={props.name}/>

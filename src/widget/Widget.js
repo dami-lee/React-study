@@ -3,6 +3,8 @@ import Timer from './Timer';
 import Input from './common/Input';
 import Todo from './common/Todo';
 
+import './Widget.css';
+
 class Widget extends React.Component {
     constructor(props) {
         super(props);
@@ -61,7 +63,7 @@ class Widget extends React.Component {
         } = this;
 
         return (
-            <>
+            <div class="widget center">
             {
                 show === 'intro' ?
                 <Input
@@ -74,6 +76,7 @@ class Widget extends React.Component {
                 <div>
                     <Timer
                         name={name}/>
+                    <div class="todo-container end">
                     {
                         !todoShow ?
                         <Input
@@ -89,9 +92,10 @@ class Widget extends React.Component {
                             <button onClick={deleteTodo}>[delete]</button>
                         </Todo>
                     }
+                    </div>
                 </div>
             }
-            </>
+            </div>
         );
     }
 }

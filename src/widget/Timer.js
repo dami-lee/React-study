@@ -34,15 +34,15 @@ class Timer extends React.Component {
         const { name } = this.props;
 
         return (
-            <>
-                <h1>{time}</h1>
+            <div class="time-container">
+                <h1 class="time">{time}</h1>
                 <h2>
                     { 0 < current && current < 43199 && 'Good morning' }
                     { 43200 < current && current < 64799 && 'Good Afternoon' }
                     { 64800 < current && current < 86399 && 'Good Evening' }
                     , {name}
                 </h2>
-            </>
+            </div>
         );
     }
 }
