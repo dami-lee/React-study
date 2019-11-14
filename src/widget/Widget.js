@@ -8,7 +8,7 @@ class Widget extends React.Component {
         super(props);
 
         this.state = {
-            show: 'main', // intro, main
+            show: 'intro', // intro, main
             name: '',
             todoShow: false,
             todo: ''
