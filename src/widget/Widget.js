@@ -7,8 +7,10 @@ class Widget extends React.Component {
         super(props);
 
         this.state = {
-            show: 'intro', // intro, main
-            name: ''
+            show: 'main', // intro, main
+            name: '',
+            todoShow: false,
+            todo: ''
         }
     }
 
@@ -26,11 +28,27 @@ class Widget extends React.Component {
         }
     }
 
+    updateTodo = event => {
+        this.setState({
+            todo: event.target.value
+        })
+    }
+
+    enterTodo = event => {
+        if ( event.key === 'Enter' ) {
+            this.setState({
+                todoShow: true
+            })
+        }
+    }
+
     render() {
-        const { show, name } = this.state;
+        const { show, name, todoShow, todo } = this.state;
         const {
             updateName,
-            enterName
+            enterName,
+            updateTodo,
+            enterTodo
         } = this;
 
         return (
@@ -38,7 +56,6 @@ class Widget extends React.Component {
             {
                 show === 'intro' ?
                 <Input
-                    type="text"
                     name="name"
                     value={name}
                     onChange={updateName}
@@ -48,15 +65,21 @@ class Widget extends React.Component {
                 <div>
                     <Timer
                         name={name}/>
-                    <div>
-                        What is your main focus for today?
-                        <input type="text"/>
-                    </div>
-                    <div>
-                        <input type="checkbox"/>
-                        <label>blabla</label>
-                        <button>[delete]</button>
-                    </div>
+                    {
+                        !todoShow ?
+                        <Input
+                            name="todo"
+                            value={todo}
+                            onChange={updateTodo}
+                            onKeyDown={enterTodo}>
+                            What is your main focus for today?
+                        </Input> :
+                        <div>
+                            <input type="checkbox"/>
+                            <label>{todo}</label>
+                            <button>[delete]</button>
+                        </div>
+                    }
                 </div>
             }
             </>
