@@ -65,6 +65,11 @@ class SignUp extends React.Component {
                 console.log(result);
             }
         )
+        .catch(
+            (error) => {
+                console.log(error)
+            }
+        )
     }
 
     render() {

@@ -37,10 +37,11 @@ class SignIn extends React.Component {
         const opts = {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
+                'Accept': 'application/json', // 받아오는 데이터 타입
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(payload)
+            // body: JSON.stringify({ email: email, password: password })
         }
 
         fetch(
@@ -55,6 +56,11 @@ class SignIn extends React.Component {
                     alert('실패');
                 }
                 console.log(result);
+            }
+        )
+        .catch(
+            (error) => {
+                console.log(error)
             }
         )
     }
