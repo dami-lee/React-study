@@ -6,7 +6,7 @@
 
 - Component 구성
 - state 생성
-- SignIn, SignUp 제작
+- fetch API를 사용한 SignIn, SignUp 제작
 
 ### 과제
 
