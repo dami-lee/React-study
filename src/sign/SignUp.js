@@ -1,6 +1,6 @@
 import React from 'react';
-import Input from '../Components/Input';
-import Button from '../Components/Button';
+import Input from './common/Input';
+import Button from './common/Button';
 
 class SignUp extends React.Component {
     constructor(props) {

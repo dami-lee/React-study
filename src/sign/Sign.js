@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Components/Button';
+import Button from './common/Button';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
