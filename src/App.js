@@ -1,10 +1,10 @@
 import React from 'react';
-import Sign from './sign/Sign';
+import Feed from './feed/Feed';
 
 function App() {
   return (
     <div className="App">
-      <Sign/>
+      <Feed/>
     </div>
   );
 }
