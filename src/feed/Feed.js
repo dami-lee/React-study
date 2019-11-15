@@ -40,11 +40,35 @@ class Feed extends React.Component {
         }
     }
 
+    handleLikeBtn = (id) => {
+        console.log(id);
+    }
+
+    handleAddBtn = () => {
+        const tempData = [
+            {
+                id: 4,
+                name: '콩쥐',
+                time: '2019.11.15',
+                comment: '추가 내용',
+                like: 0
+            }
+        ]
+
+        let comments = this.state.comments;
+
+        comments.push(tempData);
+        this.setState({
+            comments: comments
+        })
+    }
+
     renderCommentBox = commentObj => {
         return (
             <FeedBox
                 key={commentObj.id}
-                like={commentObj.like}>
+                commentObj={commentObj}
+                onClick={this.handleLikeBtn}>
                 <CommentBox
                     name={commentObj.name}
                     time={commentObj.time}
@@ -56,7 +80,8 @@ class Feed extends React.Component {
     render() {
         const { comments } = this.state;
         const {
-            renderCommentBox
+            renderCommentBox,
+            handleAddBtn
         } = this;
 
         return (
@@ -66,6 +91,7 @@ class Feed extends React.Component {
                         renderCommentBox(commentObj)
                     )
                 }
+                <button onClick={handleAddBtn}>피드 추가</button>
             </div>
         )
     }
