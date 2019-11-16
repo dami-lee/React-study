@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from './common/Input';
-import Button from './common/Button';
+// import Button from './common/Button';
+import { Link } from 'react-router-dom';
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -97,10 +98,11 @@ class SignUp extends React.Component {
                     name="Password"
                     value={password}
                     onChange={updatePassword}/>
-                <Button
+                {/* <Button
                     onClick={submit}>
                     Submit
-                </Button>
+                </Button> */}
+                <Link to="/Feed">Submit</Link>
             </>
         );
     }
